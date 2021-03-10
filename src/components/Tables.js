@@ -17,7 +17,19 @@ class Tables extends Component {
       ],
     }
   }
+  componentDidMount() {
+    // Lets do an API call to get the data
 
+    const self = this
+    fetch('/api/tables')
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data);
+        const d = data.map((r) => ({ name: r.name, last_role: r.id }))
+        console.log(d)
+        self.setState({ tables: d })
+      })
+  }
   render() {
     const tables = this.state.tables
     return (
