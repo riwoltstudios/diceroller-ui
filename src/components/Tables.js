@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import Table from './Table'
+
 
 class Tables extends Component {
   constructor(props) {
@@ -33,20 +33,28 @@ class Tables extends Component {
   render() {
     const tables = this.state.tables
     return (
-      <table className='ui celled table'>
-        <thead>
-          <tr>
-            <th>Table Name</th>
-            <th>Last Role</th>
-          </tr>
-        </thead>
+      <div>
+        <h1 className='ui header'>Tables</h1>
+        <table className='ui celled table'>
+          <thead>
+            <tr>
+              <th>Table Name</th>
+              <th>Last Role</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          {tables.map((t) => (
-            <Table key={t.name} tname={t.name} last_role={t.last_role}></Table>
-          ))}
-        </tbody>
-      </table>
+          <tbody>
+            {tables.map((t) => (
+              <tr key={t.name}>
+                <td>{t.name}</td>
+                <td>{t.last_role}</td>
+              </tr>
+              
+              // <Table key={t.name} tname={t.name} last_role={t.last_role}></Table>
+            ))}
+          </tbody>
+        </table>
+      </div>
     )
   }
 }
