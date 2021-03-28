@@ -1,0 +1,1 @@
+export const COLLECT_FAITH = "COLLECT_FAITH";

@@ -2,6 +2,7 @@ import { Component } from 'react'
 import './app.styles.scss'
 import { BrowserRouter, Route, Switch } from 'react-router'
 import FaithCollector from './components/FaithCollector'
+import ResourceDisplay from './components/ResourceDisplay'
 class App extends Component {
   render() {
     return (
@@ -11,7 +12,8 @@ class App extends Component {
       // </div>
       <main>
         <div className='ui container'>
-          <FaithCollector></FaithCollector>
+            <ResourceDisplay></ResourceDisplay>
+            <FaithCollector></FaithCollector>
         </div>
       </main>
     )
