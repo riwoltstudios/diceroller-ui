@@ -1,8 +1,7 @@
 import { Component } from 'react'
-import Tables from './components/Tables'
-import Table from './components/Table'
 import './app.styles.scss'
 import { BrowserRouter, Route, Switch } from 'react-router'
+import FaithCollector from './components/FaithCollector'
 class App extends Component {
   render() {
     return (
@@ -12,10 +11,7 @@ class App extends Component {
       // </div>
       <main>
         <div className='ui container'>
-          <Switch>
-            <Route path="/tables" component={Tables} exact/>
-            <Route path="/tables/:table_name" component={Table}/>
-          </Switch>
+          <FaithCollector></FaithCollector>
         </div>
       </main>
     )

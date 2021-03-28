@@ -6,3 +6,4 @@ FROM gitpod/workspace-full
 #
 # More information: https://www.gitpod.io/docs/config-docker/
 RUN npm install webpack
+RUN npm install react-redux
