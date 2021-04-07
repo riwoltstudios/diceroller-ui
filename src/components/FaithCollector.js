@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
-import {connect, useDispatch} from "react-redux"
-import {collectFaith} from "../actions/index"
-const mapStateToProps = state => {
-    return {faith: state.faith}
-}
-const ConnectedFaithCollector = ({ faith}) => {
-  // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0);
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { collectFaith } from '../actions/index'
+
+const FaithCollector = () => {
   const dispatch = useDispatch()
+  const handleClick = function() {
+    dispatch(collectFaith())
+  }
   return (
     <div>
-      <p>You clicked2 {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
+      <button
+        className='text-white font-bold bg-blue-600 hover:bg-blue-800 py-2 px-4 rounded'
+        onClick={handleClick}
+      >
+        Collect Faith
       </button>
-      <button onClick={() => dispatch(collectFaith())}>Second Button</button>
-      <p>{faith}</p>
     </div>
-  );
+  )
 }
-const FaithCollector = connect(mapStateToProps)(ConnectedFaithCollector);
+
 export default FaithCollector
