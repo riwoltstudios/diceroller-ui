@@ -1,12 +1,12 @@
-import React from 'react'
 import { useDispatch } from 'react-redux'
 import { collectFaith } from '../actions/index'
+import { useCallback } from 'react'
 
 const FaithCollector = () => {
   const dispatch = useDispatch()
-  const handleClick = function() {
+  const handleClick = useCallback(() => {
     dispatch(collectFaith())
-  }
+  }, [])
   return (
     <div>
       <button
