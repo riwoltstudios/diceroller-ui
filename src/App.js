@@ -5,6 +5,7 @@ import FaithCollector from './components/FaithCollector'
 import ResourceDisplay from './components/ResourceDisplay'
 import TedVitalsDisplay from './components/TedVitalsDisplay'
 import GameTickDisplay from './components/GameTickDisplay'
+import MiracleSelector from './components/MiracleSelector'
 class App extends Component {
   render() {
     return (
@@ -23,6 +24,7 @@ class App extends Component {
               </div>
               <div>
                 <FaithCollector></FaithCollector>
+                <MiracleSelector></MiracleSelector>
               </div>
               <div>
                 <ResourceDisplay></ResourceDisplay>
